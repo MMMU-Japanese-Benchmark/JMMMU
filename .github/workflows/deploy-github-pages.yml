@@ -1,0 +1,70 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/deploy-github-pages.yml
+      - github_pages/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/deploy-github-pages.yml
+      - github_pages/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: github_pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Instal Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.14.0
+          cache: pnpm
+          cache-dependency-path: github_pages/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+        env:
+          PUBLIC_URL: /JMMMU
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: github_pages/dist
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
