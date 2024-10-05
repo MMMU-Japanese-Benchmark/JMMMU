@@ -11,7 +11,7 @@ const Result = () => {
         <div>
           <h2>Great Room for Improvement</h2>
           <span>
-            In our experiment, the performance is up to 40.3% for open-source, and 58.0% for closed-source models,
+            In our experiment, the performance is up to 40.5% for open-source, and 58.6% for closed-source models,
             leaving great room for improvement.{" "}
           </span>
           <span>
@@ -37,13 +37,28 @@ const Result = () => {
             significantly.{" "}
           </span>
           <span>
-            For instance, (i) Phi-3 Vision (no multilingual support), (ii) Phi-3.5 Vision (a multilingual model with
-            Japanese support), and (iii) EvoVLM-JP v2 (a Japanese LMM) show similar results on the CA split (31.4
-            &plusmn; 0.8%).{" "}
+            For instance, we compared two leading models, GPT-4o and Claude 3.5 Sonnet, which perform similarly on
+            original MMMU and on the CA split of JMMMU.{" "}
+          </span>
+          <span>However, on the CS split, GPT-4o outperformed Claude 3.5 Sonnet by 15.7%. </span>
+          <span>
+            Our research is pioneering in revealing this, a discrepancy that would have remained obscured without
+            introducing brand new questions in the CS split.{" "}
           </span>
           <span>
-            However, their CS scores differ markedly: (i) Phi-3 Vision scores worse (-6.4%), (ii) Phi-3.5 Vision scores
-            slightly better (+3.5%), and (iii) EvoVLM-JP v2 excels (+10.7%).{" "}
+            Our finding underscores the limitations of relying exclusively on auto-translated benchmarks for a thorough
+            evaluation of model capabilities in non-English languages, highlighting the importance of evaluating models
+            on culture-specific questions.
+          </span>
+          <br />
+          <span>
+            In addition, (i) Phi-3 Vision (no multilingual support), (ii) Phi-3.5 Vision (a multilingual model with
+            Japanese support), and (iii) EvoVLM-JP v2 (a Japanese LMM) show similar results on the CA split (31.5
+            &plusmn; 0.7%).{" "}
+          </span>
+          <span>
+            However, their CS scores differ markedly: (i) Phi-3 Vision scores worse (-5.4%), (ii) Phi-3.5 Vision scores
+            slightly better (+3.5%), and (iii) EvoVLM-JP v2 excels (+13.0%).{" "}
           </span>
           <span>
             This highlights how Japanese-focused training can significantly impact performance in Japanese-specific
@@ -58,9 +73,9 @@ const Result = () => {
             Heritage.{" "}
           </span>
           <span>
-            Even the best-performing open-source model (InternVL2 8B) scores 31.3% lower than GPT-4o in Japanese
-            Heritage, while in other subjects, there is at least one open-source model whose gap from GPT-4o is &le;
-            18%, indicating the inadequacy of the open-source model in this domain.
+            Even the best-performing open-source model (EvoVLM-JP v2) scores 30.7% lower than GPT-4o in Japanese
+            Heritage, while in other culture-specific subjects, there is at least one open-source model whose gap from
+            GPT-4o is &lt; 17%, indicating the inadequacy of the open-source model in this domain.
           </span>
         </div>
       </div>

@@ -93,11 +93,20 @@ const LINK_BUTTONS: LinkButtonProps[] = [
     ),
   },
   {
-    url: "",
+    url: "https://x.com/AtsuMiyaiAM/status/1840822835851510028",
     children: (
       <>
         <FaTwitter />
-        &nbsp;Twitter (coming soon)
+        &nbsp;Twitter (English)
+      </>
+    ),
+  },
+  {
+    url: "https://x.com/y_imjk/status/1840910051596517763",
+    children: (
+      <>
+        <FaTwitter />
+        &nbsp;Twitter (Japanese)
       </>
     ),
   },

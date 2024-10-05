@@ -36,7 +36,7 @@ const Leaderboard = () => {
 
   // Table
   const columns = useMemo(() => COLUMNS, []);
-  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 }); // eslint-disable-line
+  // const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
   // const [sorting, setSorting] = useState<SortingState>([{ id: "overall", desc: true }]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const table = useReactTable({
@@ -47,7 +47,8 @@ const Leaderboard = () => {
     getSortedRowModel: getSortedRowModel(),
     // onPaginationChange: setPagination,
     onSortingChange: setSorting,
-    state: { pagination, sorting },
+    // state: { pagination, sorting },
+    state: { sorting },
   });
 
   // Virtualizer
@@ -57,7 +58,7 @@ const Leaderboard = () => {
     count: rows.length,
     getScrollElement: () => tableContainerRef.current,
     estimateSize: () => 32,
-    overscan: 5,
+    overscan: 100,
     measureElement:
       typeof window !== "undefined" && !navigator.userAgent.includes("Firefox")
         ? (element) => element?.getBoundingClientRect().height
@@ -77,7 +78,7 @@ const Leaderboard = () => {
       </p>
       <div className="leaderboard-content">
         <div ref={tableContainerRef} className="leaderboard-table-container">
-          <div style={{ height: `${rowVirtualizer.getTotalSize()}px` }}>
+          <div style={{ height: "25rem" }}>
             <table className="leaderboard-table">
               <thead
                 className="leaderboard-table-header"
@@ -106,7 +107,7 @@ const Leaderboard = () => {
               <tbody
                 className="leaderboard-table-body"
                 style={{
-                  height: `${rowVirtualizer.getTotalSize()}px`,
+                  // height: `${rowVirtualizer.getTotalSize()}px`,
                   position: "relative",
                 }}
               >
