@@ -5,8 +5,12 @@ import "./index.css";
 const BIBTEX_ENTRY = `@misc{onohara2024jmmmu,
   title={JMMMU: A Japanese Massive Multi-discipline Multimodal Understanding Benchmark},
   author={Shota Onohara and Atsuyuki Miyai and Yuki Imajuku and Kazuki Egashira and Jeonghun Baek and Xiang Yue and Graham Neubig and Kiyoharu Aizawa},
-  url={https://huggingface.co/datasets/JMMMU/JMMMU},
-  year={2024}
+  eprint={2410.17250},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2410.17250},
+  year={2024},
+  howpublished={arXiv:2410.17250}
 }`;
 
 const copyClipboard = () => {

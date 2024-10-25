@@ -41,7 +41,7 @@
         "modelType": "LMM",
         "model": "Claude 3.5 Sonnet (2024-06-20)",
         "modelUrl": null,
-        "model_sizes": null,
+        "modelSize": null,
         "original": 52.1,
         "overall": 50.8,
         "cultureSpecific": 51.0,

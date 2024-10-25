@@ -67,11 +67,11 @@ const ANNOTATION_DESCRIPTION = ["†: Core Contributors"];
 
 const LINK_BUTTONS: LinkButtonProps[] = [
   {
-    url: "",
+    url: "https://arxiv.org/abs/2410.17250",
     children: (
       <>
         <FaRegFilePdf />
-        &nbsp;Paper (comming soon)
+        &nbsp;Paper (arXiv)
       </>
     ),
   },
