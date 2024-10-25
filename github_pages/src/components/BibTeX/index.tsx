@@ -2,15 +2,11 @@ import { LuCopy } from "react-icons/lu";
 import "./index.css";
 
 // BibTeX entry for the paper
-const BIBTEX_ENTRY = `@misc{onohara2024jmmmu,
-  title={JMMMU: A Japanese Massive Multi-discipline Multimodal Understanding Benchmark},
-  author={Shota Onohara and Atsuyuki Miyai and Yuki Imajuku and Kazuki Egashira and Jeonghun Baek and Xiang Yue and Graham Neubig and Kiyoharu Aizawa},
-  eprint={2410.17250},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2410.17250},
-  year={2024},
-  howpublished={arXiv:2410.17250}
+const BIBTEX_ENTRY = `@article{onohara2024jmmmu,
+  title={JMMMU: A Japanese Massive Multi-discipline Multimodal Understanding Benchmark for Culture-aware Evaluation},
+  author={Onohara, Shota and Miyai, Atsuyuki and Imajuku, Yuki and Egashira, Kazuki and Baek, Jeonghun and Yue, Xiang and Neubig, Graham and Aizawa, Kiyoharu},
+  journal={arXiv preprint arXiv:2410.17250},
+  year={2024}
 }`;
 
 const copyClipboard = () => {
