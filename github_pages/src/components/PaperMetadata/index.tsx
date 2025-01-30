@@ -112,6 +112,8 @@ const LINK_BUTTONS: LinkButtonProps[] = [
   },
 ];
 
+const ACCEPTED = "NAACL 2025 (main)";
+
 const PaperMetadata = () => {
   return (
     <div className="paper-metadata">
@@ -140,6 +142,9 @@ const PaperMetadata = () => {
         {ANNOTATION_DESCRIPTION.map((description, index) => (
           <p key={`description${index}`}>{description}</p>
         ))}
+      </div>
+      <div className="acceptance">
+        <p>{ACCEPTED}</p>
       </div>
       <div className="link-buttons">
         {LINK_BUTTONS.map((linkButton, index) => (
